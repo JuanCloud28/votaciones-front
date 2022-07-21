@@ -1,0 +1,26 @@
+<div class="sidebar">
+    <mat-form-field appearance="fill">
+        <mat-label>RESULTADOS POR PARTIDO</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let food of partys" [value]="food.value">
+            {{food.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>RESULTADOS POR CANDIDATO</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let candidate of candidates" [value]="candidate.value">
+            {{candidate.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>RESULTADOS POR MESA</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let ps of pollingStation" [value]="ps.value">
+            {{ps.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>    
+</div>

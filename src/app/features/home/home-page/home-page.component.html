@@ -1,7 +1,14 @@
+<header>
+    <app-nav-bar></app-nav-bar>
+</header>
 <section>
     <div class="title">NUEVAS ELECCIONES EN EL PAÍS</div>
     <div class="card">
         <h2>El domingo se llevaron a cabo las elecciones para el congreso nacional</h2>
-        <button mat-raised-button color="primary">VER RESULTADOS</button>
+        <button mat-raised-button color="primary" (click)="goResults()">VER RESULTADOS</button>
     </div>
 </section>
+<footer>
+    <app-footer-element></app-footer-element>
+</footer>
+

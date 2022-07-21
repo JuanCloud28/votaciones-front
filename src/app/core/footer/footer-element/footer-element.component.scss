@@ -1,0 +1,32 @@
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 12.5rem;
+    gap: 1rem;
+    .logo{
+        height: 6.25rem;
+        width: 12.5rem;
+        img{
+            object-fit: contain;
+            height: 100%;
+            width: 100%;
+            border-right: 1px solid #4A4A4A;
+        }
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 37.5rem;
+        .item{            
+            display: grid;
+            align-items: center;
+            justify-content: start;
+            justify-items: start;
+            grid-template-columns: 10% 90%;
+        }
+    }
+}
