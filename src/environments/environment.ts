@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiCandidate: 'http://localhost:4200/candidates/'
+  apiCandidate: 'http://localhost:4200/candidates/',
+  apiLogin: 'http://localhost:4200/auth/'
 };
 
 /*
