@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { Observable, Subject } from 'rxjs';
+import { SigninPopupComponent } from 'src/app/features/login/signin-popup/signin-popup.component';
+import { LoginStatusService } from '../../services/login-status.service';
 
 @Component({
   selector: 'app-nav-voting-results',
@@ -8,23 +12,32 @@ import { Router } from '@angular/router';
 })
 export class NavVotingResultsComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  $isAuthenticated: Observable<boolean>;
 
-  $isAdminLogged = false; // Este debe ser un observable cuyo valor dependa si el usuario se loggeo o no
+  constructor(
+    private router: Router,
+    public dialog: MatDialog,
+    private loginStatus: LoginStatusService
+  ) {
+    this.$isAuthenticated =this.loginStatus.isLoggedIn();
+  }
+
   ngOnInit(): void {
+
   }
 
-  login(){ 
-    this.router.navigate(['admin']);
-    this.$isAdminLogged = true;
+  login() {
+    this.dialog.open(SigninPopupComponent, {
+      width: '600px'
+    });
   }
 
-  logOut(){ 
+  logOut() {
     this.router.navigate(['results']);
-    this.$isAdminLogged = false;
+    this.loginStatus.clean();
   }
 
-  goHome(){
-    this.router.navigate(['/']);    
+  goHome() {
+    this.router.navigate(['/']);
   }
 }

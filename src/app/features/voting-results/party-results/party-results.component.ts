@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { PartyResultsService } from 'src/app/core/services/party-results.service';
 
 @Component({
   selector: 'app-party-results',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PartyResultsComponent implements OnInit {
 
-  constructor() { }
+  $party : Observable<any>;
+  constructor(private partyresults : PartyResultsService) {
+    this.$party= this.partyresults.getPartyResults(); 
+   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
   }
 
 }

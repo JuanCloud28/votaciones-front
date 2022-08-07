@@ -1,12 +1,12 @@
 <div class="header">
-    <div class="content" *ngIf="$isAdminLogged">
+    <div class="content" *ngIf="$isAuthenticated | async">
         <div class="logo-admin">
             <img src="../../../../assets/rnec-logo.png" alt="HOME">
         </div>
         <img src="../../../../assets/logos_web_sigloXXI_negro.png" alt="HOME"> 
         <button mat-raised-button color="accent" (click)="logOut()">SALIR</button>
     </div>
-    <div class="content" *ngIf="!$isAdminLogged">
+    <div class="content" *ngIf="!($isAuthenticated | async)">
         <div class="logo-citizen" (click)="goHome()">
             <img src="../../../../assets/rnec-logo.png" alt="HOME">
         </div>    
