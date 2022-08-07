@@ -29,16 +29,16 @@ export class CandidatesService {
 
   constructor(private readonly http:HttpClient) { }
 
-  login():Observable<LoginObject> {
-    const body = { correo: "admin@admin.com", contrasena: "admin" };
-    return this.http.post<LoginObject>(this.API+"/auth", body);
-  }
+  //login():Observable<LoginObject> {
+    //const body = { correo: "admin@admin.com", contrasena: "admin" };
+    //return this.http.post<LoginObject>(this.API+"/auth", body);
+  //}
 
   getCandidates():Observable<Candidate[]> {
-    var token;
-    this.login().subscribe( res => {
-        token = res.token;
-      })
-    return this.http.get<Candidate[]>(this.API+"/candidates/", token );
+    //var token;
+    //this.login().subscribe( res => {
+    //    token = res.token;
+    //  })
+    return this.http.get<Candidate[]>(this.API+"/candidates/");
   }
 }
