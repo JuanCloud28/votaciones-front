@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { LoginStatusService } from '../../services/login-status.service';
 
 @Component({
   selector: 'app-sidebar-element',
@@ -8,9 +10,13 @@ import { Router } from '@angular/router';
 })
 export class SidebarElementComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private loginStatus: LoginStatusService
+  ) { 
+    this.$isAuthenticated =this.loginStatus.isLoggedIn();
+  }
 
-  $isAdminLogged = false; // Este debe ser un observable cuyo valor dependa si el usuario se loggeo o no
+  $isAuthenticated: Observable<boolean>;
   partys = [{value:"", name:"Todos"},{value:1, name:"Partido 1"}, {value:2, name:"Partido 2"}] //Lista dummy de partidos
   candidates = [{value:"", name:"Todos"},{value:1, name:"Candidato 1"}, {value:2, name:"Candidato 2"}] //Lista dummy de los candidatos
   pollingStation = [{value:"", name:"Todos"},{value:1, name:"Mesa 1"}, {value:2, name:"Mesa 2"}] //Lista dummy de mesas de votación 

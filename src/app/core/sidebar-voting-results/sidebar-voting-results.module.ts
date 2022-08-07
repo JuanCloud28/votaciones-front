@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SidebarElementComponent } from './sidebar-element/sidebar-element.component';
 import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { MatSelectModule } from '@angular/material/select';
   ],
   imports: [
     CommonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatButtonModule
   ],
   exports: [
     SidebarElementComponent

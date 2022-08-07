@@ -1,4 +1,4 @@
-.sidebar{
+.sidebar div{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,5 +9,9 @@
     mat-form-field{
         background-color: #fff;
         width: 17.5rem;
+    }
+    button{
+        width: 12.5rem;
+        height: 3.75rem;
     }
 }

@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  apiCandidate: 'http://localhost:4200/candidates/',
-  apiLogin: 'http://localhost:4200/auth/'
+  apiUrl: "http://127.0.0.1:7777" // Url apiGateway
 };
 
 /*

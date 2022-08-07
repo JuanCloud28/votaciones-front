@@ -1,0 +1,20 @@
+<div class="container">
+    <form (ngSubmit)="login()" [formGroup]="loginForm">
+        <mat-card-title>Iniciar sesión</mat-card-title>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Correo</mat-label>
+            <input type="email" matInput formControlName="correo" placeholder="Ejemplo. correo@ejemplo.com">
+            <mat-error *ngIf="loginForm.hasError('required')">
+                El Correo es <strong>requerido</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" formControlName="contrasena" placeholder="Escribe tu contraseña">
+          </mat-form-field>
+         <div class="actions">
+            <button mat-raised-button type="button" (click)="closeDialog()">Cancelar</button>
+            <button mat-raised-button color="primary" type="submit">Iniciar</button>
+         </div> 
+    </form>
+</div>
