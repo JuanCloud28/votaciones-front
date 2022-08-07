@@ -1,1 +1,5 @@
-<p>candidate-results works!</p>
+<ul class="candidates">
+    <li *ngFor="let candidate of candidates">
+      <div class="container"><img src="../../../../assets/candidato.png" alt="candidato"><span class="text"> {{candidate.name}} {{candidate.last_name}} <br><br> {{candidate.partido.name}} <br><br> 10</span></div>
+    </li>
+</ul>
