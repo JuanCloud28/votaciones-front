@@ -21,18 +21,18 @@ export class CandidateResultsComponent implements OnInit {
   }
 
   candidates: Candidate[] = [
-    { _id: '1', last_name: 'Rodriguez', name: 'Juan', partido: this.partido1 },
-    { _id: '2', last_name: 'Becerra', name: 'Maria', partido: this.partido2 },
-    { _id: '3', last_name: 'Garcia', name: 'Luis', partido: this.partido1 }
+    //{ _id: '1', last_name: 'Rodriguez', name: 'Juan', partido: this.partido1 },
+    //{ _id: '2', last_name: 'Becerra', name: 'Maria', partido: this.partido2 },
+    //{ _id: '3', last_name: 'Garcia', name: 'Luis', partido: this.partido1 }
   ];
 
   constructor(private readonly candidateSV:CandidatesService) { }
 
   ngOnInit(): void {
-    //this.candidateSV.getCandidates()
-    //.subscribe( res => {
-    //  this.candidates = [...res];
-    //});
+    this.candidateSV.getCandidates()
+    .subscribe( res => {
+      this.candidates = [...res];
+    });
   }
 
 }

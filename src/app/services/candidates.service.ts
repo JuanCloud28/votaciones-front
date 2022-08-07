@@ -25,20 +25,20 @@ export interface LoginObject {
   providedIn: 'root'
 })
 export class CandidatesService {
-  private readonly API=environment.apiCandidate;
-  private readonly API_LOGIN=environment.apiLogin;
+  private readonly API=environment.apiUrl;
 
   constructor(private readonly http:HttpClient) { }
 
   login():Observable<LoginObject> {
     const body = { correo: "admin@admin.com", contrasena: "admin" };
-    return this.http.post<LoginObject>(this.API_LOGIN, body);
+    return this.http.post<LoginObject>(this.API+"/auth", body);
   }
 
   getCandidates():Observable<Candidate[]> {
+    var token;
     this.login().subscribe( res => {
-        const token = res.token;
+        token = res.token;
       })
-    return this.http.get<Candidate[]>(this.API);
+    return this.http.get<Candidate[]>(this.API+"/candidates/", token );
   }
 }
