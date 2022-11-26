@@ -3,6 +3,7 @@
     flex-direction: row;
     height: 8rem;
     width: 100%;
+    background-color: var(--theme-color);
     .logo{
         height: 100%;
         width: 17.0625rem;
@@ -25,5 +26,5 @@
 .ribbon{
     height: 2.25rem;
     width: 100%;
-    background-color: #0E3B51;
+    background-color: #ffffff;
 }

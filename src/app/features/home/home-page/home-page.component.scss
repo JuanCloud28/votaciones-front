@@ -1,6 +1,6 @@
 section{
     padding: 0 1rem 0 1rem;
-    background-image: url("../../../../assets/elecciones-presidenciales.jpg");
+    background-image: url("../../../../assets/elecciones-presidenciales.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -14,7 +14,7 @@ section{
         text-align: left;        
         font-size: 5rem;
         font-weight: bold;
-        color: #fff;
+        color: rgb(50, 109, 84);
         width: 56.25rem;
     }
     .card{
@@ -30,6 +30,8 @@ section{
         button{
             position: relative;
             left: 1rem;
+            background-color: rgb(0, 255, 170);
+            color: black;
         }
     }
 }
